@@ -1,0 +1,13 @@
+server:
+  port: 0
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - "*"
+        
+eureka:
+  instance:
+    non-secure-port: 0
