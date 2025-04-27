@@ -1,6 +1,7 @@
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '2.3.0.RELEASE'
+    // id 'org.springframework.boot' version '2.3.0.RELEASE'
+    id 'org.springframework.boot' version '3.2.5'
 }
 
 apply plugin: 'java'
@@ -9,7 +10,8 @@ apply plugin: 'io.spring.dependency-management'
 group 'com.example'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = 1.8
+// sourceCompatibility = 1.8
+sourceCompatibility = 17
 
 repositories {
     mavenCentral()
@@ -17,13 +19,14 @@ repositories {
 
 dependencies {
 	//data work
-    compile('org.springframework.boot:spring-boot-starter-data-jpa')    
-    compile('org.springframework.boot:spring-boot-starter-data-rest')
-    compile('com.h2database:h2')
+    implementation('org.springframework.boot:spring-boot-starter-data-jpa')    
+    implementation('org.springframework.boot:spring-boot-starter-data-rest')
+    implementation('com.h2database:h2')
     //actuator
-    compile('org.springframework.boot:spring-boot-starter-actuator')
+    implementation('org.springframework.boot:spring-boot-starter-actuator')
     //cloud
-    compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:2.2.4.RELEASE')
+    // compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:2.2.4.RELEASE')
+    implementation('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:4.2.1')
     //test work 
-    testCompile('org.springframework.boot:spring-boot-starter-test')
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
