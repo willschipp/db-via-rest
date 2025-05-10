@@ -5,9 +5,9 @@ metadata:
   namespace: postgres-performance
 spec:
   selector:
-    app: rest-app
+    app: postgres
   ports:
     - protocol: TCP
       port: 8080
       targetPort: 8080
-  type: ClusterIP
+  type: LoadBalancer

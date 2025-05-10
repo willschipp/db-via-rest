@@ -6,8 +6,6 @@ management:
         - "*"
 
 spring:
-  # config:
-  #   import: "kubernetes:"
   data:  
     rest:
       base-path: /api
@@ -21,4 +19,4 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect  
     hibernate:
-      auto-ddl: update
+      auto-ddl: CREATE

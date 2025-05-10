@@ -12,7 +12,7 @@ spec:
     metadata:
       labels:
         app: postgres
-    spec:
+    spec:  
       containers:
         - name: postgres
           image: registry.hub.docker.com/library/postgres:14
@@ -24,7 +24,7 @@ spec:
                 name: postgres-secret
           volumeMounts:
             - mountPath: /var/lib/postgresql/data
-              name: postgresdata
+              name: postgresdata           
           resources:
             requests:
               cpu: "1"
@@ -62,4 +62,4 @@ spec:
       volumes:
         - name: postgresdata
           persistentVolumeClaim:
-            claimName: postgres-volume-claim       
+            claimName: postgres-volume-claim
