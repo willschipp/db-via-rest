@@ -6,9 +6,6 @@ metadata:
   labels:
     app: postgres-connection
 data:
-  application.yml: |-
-    spring:
-      datasource:
-          url: jdbc:postgresql://postgres:5432/pg_db
-          username: ps_user
-          password: SecurePassword    
+  SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/pg_db
+  SPRING_DATASOURCE_USERNAME: ps_user
+  SPRING_DATASOURCE_PASSWORD: SecurePassword

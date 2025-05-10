@@ -55,15 +55,11 @@ spec:
               path: /actuator/health/readiness
               port: 8080
             initialDelaySeconds: 15
-            periodSeconds: 30
-          volumeMounts:
-            - name: config-volume
-              mountPath: /app/application.yml
-              subPath: application.yml            
+            periodSeconds: 30     
+          envFrom:
+          - configMapRef:
+              name: postgres-connection
       volumes:
         - name: postgresdata
           persistentVolumeClaim:
-            claimName: postgres-volume-claim
-        - name: config-volume
-          configMap:
-            name: postgres-connection            
+            claimName: postgres-volume-claim       
