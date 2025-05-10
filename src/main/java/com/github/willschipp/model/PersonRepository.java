@@ -25,9 +25,9 @@ public interface PersonRepository extends JpaRepository<Person, Integer> {
 	@Override
 	default void deleteInBatch(Iterable<Person> entities) { }
 
-	@RestResource(exported=false)
-	@Override
-	default void deleteAllInBatch() { }
+	// @RestResource(exported=false)
+	// @Override
+	// default void deleteAllInBatch() { }
 	
 	
 }
