@@ -1,4 +1,4 @@
-package com.example.model;
+package com.github.willschipp.model;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RestResource;

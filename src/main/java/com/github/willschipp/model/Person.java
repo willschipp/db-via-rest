@@ -1,4 +1,4 @@
-package com.example.model;
+package com.github.willschipp.model;
 
 import java.util.Date;
 

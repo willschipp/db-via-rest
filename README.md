@@ -1,6 +1,4 @@
-# Simple Spring Feign Client Microservice
-
-Simple Spring Cloud Gateway API server
+# Simple Java App to Validate REST Performance
 
 ## To Run
 
