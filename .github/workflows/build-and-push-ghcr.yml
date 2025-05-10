@@ -32,7 +32,6 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}  
 
       - name: 'Build Inventory Image'
-        working-directory: ./app
         run: |
           docker build . --tag ghcr.io/willschipp/db-via-rest:latest
           docker push ghcr.io/willschipp/db-via-rest:latest
