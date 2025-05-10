@@ -1,13 +1,20 @@
-server:
-  port: 0
-
 management:
   endpoints:
     web:
       exposure:
         include:
         - "*"
-        
-eureka:
-  instance:
-    non-secure-port: 0
+
+spring:
+  config:
+    import: "kubernetes:"
+  data:  
+    rest:
+      base-path: /api
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+  jpa:
+    hibernate:
+      auto-ddl: update
