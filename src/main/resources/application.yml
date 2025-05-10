@@ -13,10 +13,10 @@ spring:
     url: ${SPRING_DATASOURCE_URL}
     username: ${SPRING_DATASOURCE_USERNAME}
     password: ${SPRING_DATASOURCE_PASSWORD}
-    driver-class-name: org.postgresql.Driver
   jpa:
+    hibernate:
+      auto-ddl: create
+    show-sql: true
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect  
-    hibernate:
-      auto-ddl: CREATE
+        dialect: org.hibernate.dialect.PostgreSQLDialect      
