@@ -26,6 +26,11 @@ public class DataInit {
 
     public void generateAndPopulate() throws Exception {
         //generate records
+        generateAndPopulate(rowCount);
+    }
+
+    public void generateAndPopulate(int rowCount) throws Exception {
+        //generate records
         List<Person> persons = new ArrayList<>();
         //insert
         for (int i=0;i<rowCount;i++) {
@@ -38,8 +43,7 @@ public class DataInit {
         } //end for
         //insert
         personRepository.saveAll(persons);
-        logger.debug("inserted " + rowCount + " records");
-    }
+    }        
 
     public void purge() throws Exception {
         personRepository.deleteAllInBatch();

@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.github.willschipp.service.DataInit;
@@ -19,8 +20,8 @@ public class DataEndpoint {
     DataInit dataInit;
 
     @PostMapping("/generate")
-    public void generate(HttpServletResponse httpServletResponse) throws Exception {
-        dataInit.generateAndPopulate();
+    public void generate(@RequestParam(value="records",required = false,defaultValue = "1000") int records,HttpServletResponse httpServletResponse) throws Exception {
+        dataInit.generateAndPopulate(records);
         httpServletResponse.setStatus(HttpStatus.CREATED.value());
     }
 
