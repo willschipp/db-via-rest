@@ -5,7 +5,14 @@ management:
         include:
         - "*"
 
+server:
+  port: 8080
+
+---
 spring:
+  config:
+    active:
+      on-profile: server
   data:  
     rest:
       base-path: /api
@@ -17,3 +24,14 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+
+---
+spring:
+  config:
+    active:
+      on-profile: client
+  # autoconfigure:
+  #   exclude: 
+  #   - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+  #   - org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
+
